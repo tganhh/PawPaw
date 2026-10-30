@@ -1,0 +1,4 @@
+# Bỏ qua file chứa key ở các tầng thư mục js
+**/js/config.js
+js/config.js
+config.js

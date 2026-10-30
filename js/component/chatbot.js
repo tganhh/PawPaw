@@ -3,9 +3,8 @@
 
     if (document.getElementById("pawpawChatBox")) return;
 
-    var scriptElement = document.currentScript;
-    var scriptUrl = scriptElement ? scriptElement.src : (window.location.href); 
-    var cssUrl = "../../css/chatbot.css";
+    var ROOT = new URL("../../", document.currentScript.src).href;
+    var cssUrl = ROOT + "css/chatbot.css";
 
     if (!document.getElementById("pawpaw-chatbot-css")) {
         var link = document.createElement("link");
@@ -15,7 +14,7 @@
         document.head.appendChild(link);
     }
 
-    var serviceJsonUrl = "../../data/dich_vu.json";
+    var serviceJsonUrl = ROOT + "data/dich_vu.json";
     var cachedServices = null;
 
     function normalizeServices(data) {
